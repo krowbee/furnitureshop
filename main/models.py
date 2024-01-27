@@ -12,3 +12,14 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class Order(models.Model):
+    name = models.CharField(max_length=50)
+    surname= models.CharField(max_length=50)
+    email = models.EmailField(("E-mail"), max_length=254)
+    phone=models.CharField("Телефон",max_length=20)
+    basket = models.TextField(("Корзина"))
+
+    def __str__(self):
+        return self.name +" " +self.surname
